@@ -5,6 +5,8 @@ import sys
 model = load_model('rain1.model')
 graph = tf.get_default_graph()
 import numpy as np
+from flask_cors import CORS
+
 
 if 'session' in locals() and session is not None:
     print('Close interactive session')
@@ -34,6 +36,7 @@ def predict(lat,lon):
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def get_prediction():
