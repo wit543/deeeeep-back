@@ -2,3 +2,4 @@ h5py
 tensorflow
 keras
 flask
+matplotlib

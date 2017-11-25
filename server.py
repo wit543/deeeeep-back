@@ -9,7 +9,7 @@ import numpy as np
 if 'session' in locals() and session is not None:
     print('Close interactive session')
     session.close()
-    
+
 num_day_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
 def predict(lat,lon):
   result = []
@@ -42,4 +42,4 @@ def get_prediction():
   return jsonify(predict(float(request.args.get('lat')),float(request.args.get('long'))))
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(debug=True, host='0.0.0.0', port=80)
