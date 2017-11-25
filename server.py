@@ -24,8 +24,8 @@ def predict(lat,lon):
             print('{:0.1f}'.format(abs(res_a[0][0])), file=sys.stderr)
             result.append(
               {
-                "start":"2017-"+'{:02d}'.format(month)+"-"+'{:02d}'.format(i)+" "+'{:02d}'.format(h)+":00:00,"+'{:6f}'.format(lat)+","+'{:6f}'.format(lon),
-                "end":"2017-"+'{:02d}'.format(month)+"-"+'{:02d}'.format(i+1)+" "+'{:02d}'.format(h)+":00:00,"+'{:6f}'.format(lat)+","+'{:6f}'.format(lon),
+                "start":"2017-"+'{:02d}'.format(month)+"-"+'{:02d}'.format(i)+" "+'{:02d}'.format(h)+":00:00",
+                "end":"2017-"+'{:02d}'.format(month)+"-"+'{:02d}'.format(i+1)+" "+'{:02d}'.format(h)+":00:00",
                 "predict":'{:0.1f}'.format(abs(res_a[0][0]))
               }
             )
