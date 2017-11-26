@@ -62,7 +62,14 @@ CORS(app)
 def get_prediction():
   if not request.args.get('lat') and not request.args.get('long'):
     abort(400)
-  return jsonify(predict(float(request.args.get('lat')),float(request.args.get('long')),request.args.get('date'),request.args.get('hour')))
+  return jsonify(predict(float(request.args.get('lat')),float(request.args.get('long')))
+
+@app.route('/predict', methods=['GET'])
+def get_prediction():
+  if not request.args.get('lat') and not request.args.get('long'):
+    abort(400)
+  return jsonify(predict(float(request.args.get('lat')),float(request.args.get('long')),str(request.args.get('date')),request.args.get('hour')))
+
 
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0', port=5050)
