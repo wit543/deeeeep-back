@@ -33,7 +33,7 @@ def predict(lat,lon,):
             )
   return result
 
-def predict(lat,lon,date,hour):
+def predict1(lat,lon,date,hour):
   result = []
   if lat and lon:
     month = int(date.split('-')[-2])
@@ -68,7 +68,7 @@ def get_prediction():
 def get_pre():
   if not request.args.get('lat') and not request.args.get('long'):
     abort(400)
-  return jsonify(predict(float(request.args.get('lat')),float(request.args.get('long')),str(request.args.get('date')),request.args.get('hour')))
+  return jsonify(predict1(float(request.args.get('lat')),float(request.args.get('long')),str(request.args.get('date')),request.args.get('hour')))
 
 
 if __name__ == '__main__':
